@@ -18,15 +18,15 @@ const Footer: React.FC = () => {
             <div className="space-y-3 pt-2">
                 <div className="flex items-start gap-3 text-sm text-slate-300">
                     <MapPin size={18} className="text-brand-primary mt-0.5 shrink-0" />
-                    <span>4701 FM 2920, Spring, TX</span>
+                    <span>Spring, TX (Home Based)</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm text-slate-300">
                     <Phone size={18} className="text-brand-primary shrink-0" />
-                    <span>(832) 948-0098</span>
+                    <span>(281) 610-3817</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm text-slate-300">
                     <Mail size={18} className="text-brand-primary shrink-0" />
-                    <span>elizabethadams.re@gmail.com</span>
+                    <span>edelwhite_@hotmail.com</span>
                 </div>
             </div>
 
@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
-           <p className="text-slate-500 text-sm">© 2024 Elizabeth Adams / JLA Realty. All rights reserved.</p>
+           <p className="text-slate-500 text-sm">© 2024 Ruth Al-Khudhairy / HomeSmart. All rights reserved.</p>
            <div className="flex gap-6 text-sm text-slate-500">
               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

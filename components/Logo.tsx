@@ -40,11 +40,11 @@ const Logo: React.FC<LogoProps> = ({ variant = 'dark', className = '' }) => {
       </svg>
       
       <div className="flex flex-col justify-center">
-        <span className={`text-lg font-bold tracking-tight leading-none ${isDark ? 'text-slate-900' : 'text-white'}`}>
-          ELIZABETH ADAMS
+        <span className={`text-lg font-bold tracking-tight leading-none uppercase ${isDark ? 'text-slate-900' : 'text-white'}`}>
+          Ruth Al-Khudhairy
         </span>
         <span className={`text-[10px] font-bold tracking-[0.2em] uppercase leading-none mt-1.5 ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
-          JLA Realty
+          HomeSmart
         </span>
       </div>
     </div>

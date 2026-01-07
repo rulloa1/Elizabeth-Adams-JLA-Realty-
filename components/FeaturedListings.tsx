@@ -15,14 +15,19 @@ const ListingCard: React.FC<{ listing: Property }> = ({ listing }) => {
     setCurrentImageIndex((prev) => (prev - 1 + listing.imageUrls.length) % listing.imageUrls.length);
   };
 
+  const handleViewDetails = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    console.log(`View details clicked for property: ${listing.title} (${listing.id})`);
+  };
+
   return (
-    <div className="group cursor-pointer bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
+    <div className="group cursor-pointer bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col h-full">
       {/* Image Container */}
-      <div className="relative aspect-[4/3] overflow-hidden group/image">
+      <div className="relative aspect-[4/3] overflow-hidden group/image shrink-0">
         <img 
           src={listing.imageUrls[currentImageIndex]} 
           alt={listing.title} 
-          className="w-full h-full object-cover transition-transform duration-500"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60 pointer-events-none" />
         
@@ -78,27 +83,39 @@ const ListingCard: React.FC<{ listing: Property }> = ({ listing }) => {
       </div>
 
       {/* Content */}
-      <div className="p-5">
+      <div className="p-5 flex flex-col grow">
         <div className="mb-4">
             <h3 className="text-lg font-bold text-slate-900 group-hover:text-brand-primary transition-colors">{listing.title}</h3>
-            <p className="text-slate-500 text-sm flex items-center gap-1 mt-1">
+            <p className="text-slate-500 text-sm flex items-center gap-1 mt-1 mb-3">
               <MapPin size={14} className="text-slate-400" /> {listing.location}
+            </p>
+            <p className="text-slate-600 text-sm leading-relaxed line-clamp-2">
+              {listing.description}
             </p>
         </div>
         
-        <div className="flex items-center justify-between pt-4 border-t border-slate-100 text-slate-600 text-sm font-medium">
-          <div className="flex items-center gap-1.5">
-              <Bed size={16} className="text-slate-400" />
-              <span>{listing.beds} bd</span>
+        <div className="mt-auto">
+          <div className="flex items-center justify-between py-4 border-t border-slate-100 text-slate-600 text-sm font-medium">
+            <div className="flex items-center gap-1.5">
+                <Bed size={16} className="text-slate-400" />
+                <span>{listing.beds} bd</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+                <Bath size={16} className="text-slate-400" />
+                <span>{listing.baths} ba</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+                <Move size={16} className="text-slate-400" />
+                <span>{listing.sqft} sqft</span>
+            </div>
           </div>
-          <div className="flex items-center gap-1.5">
-              <Bath size={16} className="text-slate-400" />
-              <span>{listing.baths} ba</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-              <Move size={16} className="text-slate-400" />
-              <span>{listing.sqft} sqft</span>
-          </div>
+
+          <button 
+            onClick={handleViewDetails}
+            className="w-full bg-slate-50 hover:bg-brand-primary text-slate-900 hover:text-white py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 border border-slate-200 hover:border-transparent"
+          >
+            View Details
+          </button>
         </div>
       </div>
     </div>
@@ -116,11 +133,12 @@ const FeaturedListings: React.FC = () => {
       baths: 3.5,
       sqft: '3,200',
       imageUrls: [
-        'https://images.unsplash.com/photo-1600596542815-600025529888?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80'
+        'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&q=80'
       ],
-      tags: ['New Listing']
+      tags: ['New Listing'],
+      description: 'Experience luxury living in this custom-built modern farmhouse. Features high ceilings, a chef-inspired kitchen, and a private backyard oasis perfect for entertaining.'
     },
     {
       id: '2',
@@ -132,10 +150,11 @@ const FeaturedListings: React.FC = () => {
       sqft: '4,850',
       imageUrls: [
         'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80'
+        'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80'
       ],
-      tags: ['Luxury', 'Pool']
+      tags: ['Luxury', 'Pool'],
+      description: 'Breathtaking estate on a 1-acre lot. Boasting a resort-style pool, home theater, wine grotto, and impeccable finishes throughout.'
     },
     {
       id: '3',
@@ -147,10 +166,11 @@ const FeaturedListings: React.FC = () => {
       sqft: '2,800',
       imageUrls: [
         'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80'
+        'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80'
       ],
-      tags: ['Open House']
+      tags: ['Open House'],
+      description: 'Charming traditional home zoned to top-rated schools. Offers spacious living areas, a renovated kitchen, and lush landscaping with mature trees.'
     },
   ];
 

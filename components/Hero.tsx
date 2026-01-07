@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
       {/* Background Image with Parallax-like feel */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1600596542815-600025529888?auto=format&fit=crop&w=2000&q=80" 
+          src="https://images.unsplash.com/photo-1600596542815-600025529888?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80" 
           alt="Luxury Home" 
           className="w-full h-full object-cover"
         />

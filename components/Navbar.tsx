@@ -44,7 +44,7 @@ const Navbar: React.FC = () => {
         {/* CTA Button */}
         <div className="hidden md:block">
           <button className="bg-brand-dark text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-brand-primary transition-all shadow-lg shadow-blue-900/10">
-            List with Elizabeth
+            List with Ruth
           </button>
         </div>
 
@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
             </a>
           ))}
           <button className="bg-brand-primary text-white w-full py-3 rounded-lg font-semibold mt-2 shadow-md">
-            List with Elizabeth
+            List with Ruth
           </button>
         </div>
       )}

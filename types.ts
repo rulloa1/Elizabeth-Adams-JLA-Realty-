@@ -8,6 +8,7 @@ export interface Property {
   sqft: string;
   imageUrls: string[];
   tags: string[];
+  description: string;
 }
 
 export interface Stat {

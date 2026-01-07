@@ -14,8 +14,8 @@ const AboutSection: React.FC = () => {
           <div className="relative w-full lg:w-1/2">
             <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" 
-                alt="Elizabeth Adams Real Estate Agent" 
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                alt="Ruth Al-Khudhairy Real Estate Agent" 
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
@@ -29,7 +29,7 @@ const AboutSection: React.FC = () => {
                   <Star size={16} fill="currentColor" />
                   <Star size={16} fill="currentColor" />
                 </div>
-                <p className="text-xs font-bold text-slate-900">"Elizabeth made our dream home happen in record time!"</p>
+                <p className="text-xs font-bold text-slate-900">"Ruth made our dream home happen in record time!"</p>
               </div>
             </div>
             
@@ -43,7 +43,7 @@ const AboutSection: React.FC = () => {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <span className="h-px w-8 bg-brand-primary"></span>
-                <span className="text-brand-primary text-xs font-bold tracking-widest uppercase">About Elizabeth</span>
+                <span className="text-brand-primary text-xs font-bold tracking-widest uppercase">About Ruth</span>
               </div>
               <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
                 Not just an agent, <br />
@@ -52,7 +52,7 @@ const AboutSection: React.FC = () => {
             </div>
 
             <p className="text-slate-600 text-lg leading-relaxed">
-              With over 15 years in Spring's luxury market, Elizabeth brings a unique blend of data-driven strategy and concierge service. She doesn't just sell homes; she curates lifestyles and manages complex transactions with grace and precision.
+              With deep expertise in Spring's real estate market, Ruth Al-Khudhairy brings a unique blend of data-driven strategy and concierge service. She doesn't just sell homes; she curates lifestyles and manages complex transactions with grace and precision.
             </p>
 
             <div className="grid grid-cols-2 gap-8 py-6 border-y border-slate-100">
@@ -78,7 +78,7 @@ const AboutSection: React.FC = () => {
 
             <div className="pt-4">
               <button className="group flex items-center gap-3 bg-brand-dark text-white px-8 py-4 rounded-full font-semibold hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl">
-                Work with Elizabeth
+                Work with Ruth
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
